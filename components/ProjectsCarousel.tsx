@@ -71,7 +71,11 @@ export default function ProjectsCarousel({ projects }: { projects: Project[] }) 
         {projects.map((p) => (
           <Link key={p.slug} href={`/projects/${p.slug}`} className="mt-project-card" style={{ flex: '0 0 420px', scrollSnapAlign: 'start' }}>
             <div className="mt-tile" style={{ height: 230, padding: 16 }}>
-              <span className="mt-tile-label">{p.image}</span>
+              {p.imageUrl && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img className="mt-tile-img" src={p.imageUrl} alt="" />
+              )}
+              <span className={`mt-tile-label ${p.imageUrl ? 'mt-tile-label-overlay' : ''}`}>{p.image}</span>
             </div>
             <div style={{ padding: '28px 28px 32px' }}>
               <div

@@ -24,6 +24,7 @@ export interface ProjectCredit {
 export interface Project {
   slug: string;
   image: string;
+  imageUrl: string;
   domain: string;
   year: string;
   title: string;
@@ -59,6 +60,7 @@ export interface TeamMember {
   affiliation: string;
   email: string;
   bio: string;
+  photoUrl: string;
   scholarUrl: string;
   expertise: string[];
   papers: Paper[];

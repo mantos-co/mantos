@@ -66,7 +66,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         className="mt-tile"
         style={{ height: 460, borderRadius: 16, border: '1px solid var(--border)', padding: 18, marginBottom: 64 }}
       >
-        <span className="mt-tile-label">{project.image}</span>
+        {project.imageUrl && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img className="mt-tile-img" src={project.imageUrl} alt="" />
+        )}
+        <span className={`mt-tile-label ${project.imageUrl ? 'mt-tile-label-overlay' : ''}`}>{project.image}</span>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 24, marginBottom: 80 }}>

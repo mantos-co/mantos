@@ -35,7 +35,13 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
             className="mt-tile-purple"
             style={{ height: 420, borderRadius: 14, border: '1px solid var(--border)', padding: 16, marginBottom: 28 }}
           >
-            <span className="mt-tile-label">portrait — {person.name}</span>
+            {person.photoUrl && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img className="mt-tile-img" src={person.photoUrl} alt="" />
+            )}
+            <span className={`mt-tile-label ${person.photoUrl ? 'mt-tile-label-overlay' : ''}`}>
+              portrait — {person.name}
+            </span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, color: 'var(--muted)', fontSize: 15, fontWeight: 300 }}>
             <span>{person.affiliation}</span>

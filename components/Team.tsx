@@ -26,7 +26,13 @@ export default function Team({ team }: { team: TeamMember[] }) {
           {team.map((m) => (
             <Link key={m.slug} href={`/team/${m.slug}`} className="mt-team-card">
               <div className="mt-tile-purple" style={{ height: 300, padding: 16 }}>
-                <span className="mt-tile-label">portrait — {m.name}</span>
+                {m.photoUrl && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="mt-tile-img" src={m.photoUrl} alt="" />
+                )}
+                <span className={`mt-tile-label ${m.photoUrl ? 'mt-tile-label-overlay' : ''}`}>
+                  portrait — {m.name}
+                </span>
               </div>
               <div style={{ padding: 28 }}>
                 <h3 className="mt-heading" style={{ fontWeight: 700, fontSize: 24, margin: '0 0 8px' }}>
