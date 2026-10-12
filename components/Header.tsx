@@ -29,7 +29,7 @@ export default function Header() {
             fontWeight: 800,
             fontSize: 26,
             letterSpacing: '0.02em',
-            background: 'linear-gradient(90deg,#22D3D3,#4f8ef7,#8b7ff5)',
+            background: 'var(--gradient-brand)',
             WebkitBackgroundClip: 'text',
             backgroundClip: 'text',
             color: 'transparent',

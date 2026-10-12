@@ -23,34 +23,71 @@
   --header-bg: rgba(5, 6, 7, 0.88);
   --card-bg-end: #08090c;
   --hero-dots: rgba(120, 200, 220, 0.16);
+  --on-accent: #04121a;
+  --btn-bg: var(--cyan);
+  --btn-bg-hover: var(--cyan-hover);
+  --card-hover-border: rgba(34, 211, 211, 0.35);
+  --card-hover-border-2: rgba(139, 127, 245, 0.4);
+  --tile-stripe: rgba(34, 211, 211, 0.09);
+  --tile-stripe-2: rgba(139, 127, 245, 0.1);
+  --gradient-brand: linear-gradient(90deg, #22d3d3 0%, #4f8ef7 45%, #8b7ff5 100%);
+  --gradient-title: linear-gradient(90deg, #22d3d3, #8b7ff5);
+  --ring-1: #16304d;
+  --ring-2: #1c4a68;
+  --ring-3: #22617f;
+  --logo-ring-1: #1d3a5c;
+  --logo-ring-2: #2b6f8f;
+  --node-top: #22d3d3;
+  --node-outer: #2b8fd0;
+  --node-mid: #3f7de0;
+  --node-link: #173b57;
   color-scheme: dark;
 }
 
 [data-theme='light'] {
-  --bg: #f6f5f1;
-  --bg-alt: #efeee9;
+  /* Palette: olive #5e7a2e, marigold #f5af2a, off-white #f5f6f8, peach #ffc9b0, terracotta #b5694a */
+  --bg: #f5f6f8;
+  --bg-alt: #eceee9;
   --card-bg: #ffffff;
-  --card-bg-2: #fbfaf7;
-  --tile-bg: #e9ecee;
-  --text: #14171a;
-  --text-dim: #33383d;
-  --muted: #545b62;
-  --muted-2: #61686f;
-  --muted-3: #737a81;
-  --muted-4: #5b6269;
-  --cyan: #0b9ea2;
-  --cyan-hover: #0fb7bb;
-  --blue: #2f6fe0;
-  --blue-alt: #2f6fe0;
-  --purple: #6a5ee0;
-  --indigo: #4f5fe0;
-  --border: rgba(0, 0, 0, 0.09);
-  --border-strong: rgba(0, 0, 0, 0.16);
-  --border-soft: rgba(0, 0, 0, 0.07);
-  --border-soft-2: rgba(0, 0, 0, 0.12);
-  --header-bg: rgba(246, 245, 241, 0.88);
-  --card-bg-end: #f3f2ee;
-  --hero-dots: rgba(20, 110, 140, 0.18);
+  --card-bg-2: #fbfbfc;
+  --tile-bg: #ffe9de;
+  --text: #1e2416;
+  --text-dim: #3a4130;
+  --muted: #565c4d;
+  --muted-2: #626857;
+  --muted-3: #7a7466;
+  --muted-4: #5f6554;
+  --cyan: #5e7a2e;
+  --cyan-hover: #4b6224;
+  --blue: #f5af2a;
+  --blue-alt: #f5af2a;
+  --purple: #b5694a;
+  --indigo: #b5694a;
+  --border: rgba(30, 36, 22, 0.09);
+  --border-strong: rgba(30, 36, 22, 0.16);
+  --border-soft: rgba(30, 36, 22, 0.07);
+  --border-soft-2: rgba(30, 36, 22, 0.12);
+  --header-bg: rgba(245, 246, 248, 0.88);
+  --card-bg-end: #f8f8f6;
+  --hero-dots: rgba(94, 122, 46, 0.2);
+  --on-accent: #2a1d05;
+  --btn-bg: #f5af2a;
+  --btn-bg-hover: #f7bf52;
+  --card-hover-border: rgba(94, 122, 46, 0.45);
+  --card-hover-border-2: rgba(181, 105, 74, 0.45);
+  --tile-stripe: rgba(181, 105, 74, 0.12);
+  --tile-stripe-2: rgba(94, 122, 46, 0.12);
+  --gradient-brand: linear-gradient(90deg, #5e7a2e 0%, #8a7a35 45%, #b5694a 100%);
+  --gradient-title: linear-gradient(90deg, #5e7a2e, #b5694a);
+  --ring-1: #d6dcc6;
+  --ring-2: #b3c093;
+  --ring-3: #86a052;
+  --logo-ring-1: #b3c093;
+  --logo-ring-2: #5e7a2e;
+  --node-top: #f5af2a;
+  --node-outer: #5e7a2e;
+  --node-mid: #b5694a;
+  --node-link: #d2a891;
   color-scheme: light;
 }
 
@@ -130,8 +167,8 @@ a:hover {
 .mt-btn-primary {
   padding: 15px 30px;
   border-radius: 8px;
-  background: var(--cyan);
-  color: #04121a;
+  background: var(--btn-bg);
+  color: var(--on-accent);
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.14em;
@@ -144,8 +181,8 @@ a:hover {
 }
 
 .mt-btn-primary:hover {
-  background: var(--cyan-hover);
-  color: #04121a;
+  background: var(--btn-bg-hover);
+  color: var(--on-accent);
 }
 
 .mt-btn-secondary {
@@ -233,7 +270,7 @@ a:hover {
 }
 
 .mt-topic-card:hover {
-  border-color: rgba(34, 211, 211, 0.35);
+  border-color: var(--card-hover-border);
 }
 
 .mt-project-card {
@@ -247,7 +284,7 @@ a:hover {
 }
 
 .mt-project-card:hover {
-  border-color: rgba(139, 127, 245, 0.4);
+  border-color: var(--card-hover-border-2);
 }
 
 .mt-team-card {
@@ -280,7 +317,7 @@ a:hover {
 
 .mt-tile {
   background-color: var(--tile-bg);
-  background-image: repeating-linear-gradient(135deg, rgba(34, 211, 211, 0.09) 0 2px, transparent 2px 10px);
+  background-image: repeating-linear-gradient(135deg, var(--tile-stripe) 0 2px, transparent 2px 10px);
   display: flex;
   align-items: flex-end;
   position: relative;
@@ -289,7 +326,7 @@ a:hover {
 
 .mt-tile-purple {
   background-color: var(--tile-bg);
-  background-image: repeating-linear-gradient(135deg, rgba(139, 127, 245, 0.1) 0 2px, transparent 2px 10px);
+  background-image: repeating-linear-gradient(135deg, var(--tile-stripe-2) 0 2px, transparent 2px 10px);
   display: flex;
   align-items: flex-end;
   position: relative;

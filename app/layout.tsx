@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, Jost } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import InlineScript from "@/components/InlineScript";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -32,10 +33,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`,
-          }}
+        <InlineScript
+          html={`(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`}
         />
       </head>
       <body>

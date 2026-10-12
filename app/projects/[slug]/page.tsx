@@ -82,7 +82,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 fontWeight: 700,
                 fontSize: 38,
                 letterSpacing: '-0.01em',
-                background: 'linear-gradient(90deg,#22D3D3,#8b7ff5)',
+                background: 'var(--gradient-title)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',

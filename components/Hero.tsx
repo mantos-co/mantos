@@ -47,7 +47,7 @@ export default function Hero() {
             We build the{' '}
             <span
               style={{
-                background: 'linear-gradient(90deg,#22D3D3 0%,#3f8ef7 45%,#8b7ff5 100%)',
+                background: 'var(--gradient-brand)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',
