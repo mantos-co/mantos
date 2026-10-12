@@ -6,7 +6,7 @@ export default function Hero() {
       style={{
         position: 'relative',
         padding: '96px 32px 120px',
-        backgroundImage: 'radial-gradient(rgba(120,200,220,0.16) 1px, transparent 1px)',
+        backgroundImage: 'radial-gradient(var(--hero-dots) 1px, transparent 1px)',
         backgroundSize: '28px 28px',
       }}
     >

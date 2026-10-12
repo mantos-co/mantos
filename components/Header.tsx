@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import MantosLogo from './MantosLogo';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   return (
@@ -12,7 +13,7 @@ export default function Header() {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '20px 32px',
-        background: 'rgba(5,6,7,0.88)',
+        background: 'var(--header-bg)',
         backdropFilter: 'blur(10px)',
         borderBottom: '1px solid var(--border-soft)',
       }}
@@ -50,6 +51,7 @@ export default function Header() {
         <Link href="/#contact" className="mt-nav-cta">
           Get in Touch
         </Link>
+        <ThemeToggle />
       </nav>
     </header>
   );
