@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const credits = project.credits;
 
   return (
-    <main style={{ maxWidth: 1360, margin: '0 auto', padding: '56px 32px 130px' }}>
+    <main className="mt-detail">
       <Link href="/" className="mt-back-btn">
         ← Back to projects
       </Link>
@@ -46,10 +46,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <span style={{ color: 'var(--muted-3)' }}>{project.year}</span>
       </div>
       <h1
-        className="mt-heading"
+        className="mt-heading mt-detail-title"
         style={{
           fontWeight: 800,
-          fontSize: 72,
           lineHeight: 0.98,
           letterSpacing: '-0.02em',
           margin: '0 0 32px',
@@ -58,13 +57,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       >
         {project.title}
       </h1>
-      <p style={{ margin: '0 0 56px', maxWidth: 760, color: 'var(--text-dim)', fontSize: 20, lineHeight: 1.6, fontWeight: 300 }}>
+      <p className="mt-detail-lead" style={{ margin: '0 0 56px', maxWidth: 760, color: 'var(--text-dim)', lineHeight: 1.6, fontWeight: 300 }}>
         {project.summary}
       </p>
 
       <div
-        className="mt-tile"
-        style={{ height: 460, borderRadius: 16, border: '1px solid var(--border)', padding: 18, marginBottom: 64 }}
+        className="mt-tile mt-detail-hero-tile"
+        style={{ borderRadius: 16, border: '1px solid var(--border)', padding: 18, marginBottom: 64 }}
       >
         {project.imageUrl && (
           // eslint-disable-next-line @next/next/no-img-element
@@ -73,7 +72,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <span className={`mt-tile-label ${project.imageUrl ? 'mt-tile-label-overlay' : ''}`}>{project.image}</span>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 24, marginBottom: 80 }}>
+      <div className="mt-grid-3 mt-results">
         {project.results.map((r) => (
           <div key={r.label} style={{ padding: '30px 28px', border: '1px solid var(--border)', borderRadius: 14, background: 'var(--card-bg)' }}>
             <div
@@ -96,7 +95,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,300px)', gap: 72, alignItems: 'start' }}>
+      <div className="mt-project-layout">
         <div>
           {project.sections.map((s) => (
             <div key={s.label} style={{ marginBottom: 52 }}>
@@ -113,20 +112,20 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               >
                 {s.label}
               </h2>
-              <p style={{ margin: 0, maxWidth: 720, color: 'var(--text-dim)', fontSize: 18, lineHeight: 1.7, fontWeight: 300 }}>
+              <p className="mt-detail-body" style={{ margin: 0, maxWidth: 720, color: 'var(--text-dim)', lineHeight: 1.7, fontWeight: 300 }}>
                 {s.body}
               </p>
             </div>
           ))}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0,1fr))', gap: 20, marginTop: 24 }}>
+          <div className="mt-grid-2" style={{ marginTop: 24 }}>
             {project.gallery.map((g) => (
-              <div key={g} className="mt-tile-purple" style={{ height: 240, borderRadius: 14, border: '1px solid var(--border)', padding: 14 }}>
+              <div key={g} className="mt-tile-purple mt-gallery-tile" style={{ borderRadius: 14, border: '1px solid var(--border)', padding: 14 }}>
                 <span className="mt-tile-label">{g}</span>
               </div>
             ))}
           </div>
         </div>
-        <aside style={{ position: 'sticky', top: 120, display: 'flex', flexDirection: 'column', gap: 36 }}>
+        <aside className="mt-detail-aside" style={{ display: 'flex', flexDirection: 'column', gap: 36 }}>
           <div>
             <div style={{ fontSize: 12, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--muted-3)', marginBottom: 16 }}>
               Details

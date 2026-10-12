@@ -9,16 +9,17 @@ export default function ProjectsCarousel({ projects }: { projects: Project[] }) 
 
   const scrollRail = (dir: number) => {
     const el = railRef.current;
-    if (el) el.scrollBy({ left: dir * 444, behavior: 'smooth' });
+    if (el) el.scrollBy({ left: dir * ((el.querySelector<HTMLElement>('.mt-rail-card')?.offsetWidth ?? 420) + 24), behavior: 'smooth' });
   };
 
   return (
     <section
       id="projects"
-      style={{ padding: '110px 0', borderTop: '1px solid var(--border-soft)', background: 'var(--bg-alt)' }}
+      className="mt-section-flush"
+      style={{ borderTop: '1px solid var(--border-soft)', background: 'var(--bg-alt)' }}
     >
-      <div style={{ maxWidth: 1360, margin: '0 auto', padding: '0 32px' }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 24, marginBottom: 56 }}>
+      <div className="mt-container-padded">
+        <div className="mt-eyebrow-row">
           <span
             style={{ color: 'var(--cyan)', fontSize: 13, letterSpacing: '0.2em', textTransform: 'uppercase' }}
           >
@@ -31,13 +32,14 @@ export default function ProjectsCarousel({ projects }: { projects: Project[] }) 
             display: 'flex',
             alignItems: 'flex-end',
             justifyContent: 'space-between',
-            gap: 32,
+            gap: 24,
+            flexWrap: 'wrap',
             marginBottom: 44,
           }}
         >
           <h2
-            className="mt-heading"
-            style={{ fontWeight: 700, fontSize: 46, lineHeight: 1.05, margin: 0, maxWidth: 700 }}
+            className="mt-heading mt-section-title"
+            style={{ fontWeight: 700, lineHeight: 1.05, margin: 0, maxWidth: 700 }}
           >
             Selected projects.
           </h2>
@@ -57,19 +59,11 @@ export default function ProjectsCarousel({ projects }: { projects: Project[] }) 
       </div>
       <div
         ref={railRef}
-        className="mt-scroll"
-        style={{
-          display: 'flex',
-          gap: 24,
-          overflowX: 'auto',
-          scrollSnapType: 'x mandatory',
-          padding: '4px 32px 12px',
-          scrollBehavior: 'smooth',
-        }}
+        className="mt-scroll mt-rail"
       >
         <div style={{ flex: '0 0 calc((100vw - 1360px) / 2)', minWidth: 0 }} />
         {projects.map((p) => (
-          <Link key={p.slug} href={`/projects/${p.slug}`} className="mt-project-card" style={{ flex: '0 0 420px', scrollSnapAlign: 'start' }}>
+          <Link key={p.slug} href={`/projects/${p.slug}`} className="mt-project-card mt-rail-card">
             <div className="mt-tile" style={{ height: 230, padding: 16 }}>
               {p.imageUrl && (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -77,7 +71,7 @@ export default function ProjectsCarousel({ projects }: { projects: Project[] }) 
               )}
               <span className={`mt-tile-label ${p.imageUrl ? 'mt-tile-label-overlay' : ''}`}>{p.image}</span>
             </div>
-            <div style={{ padding: '28px 28px 32px' }}>
+            <div className="mt-card-body">
               <div
                 style={{
                   display: 'flex',
@@ -103,7 +97,7 @@ export default function ProjectsCarousel({ projects }: { projects: Project[] }) 
             </div>
           </Link>
         ))}
-        <div style={{ flex: '0 0 32px' }} />
+        <div className="mt-rail-end" />
       </div>
     </section>
   );

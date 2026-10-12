@@ -373,3 +373,435 @@ a:hover {
   color: var(--muted-2);
   letter-spacing: 0.06em;
 }
+
+/* ---------- Layout (responsive) ---------- */
+
+.mt-header {
+  padding: 20px 32px;
+}
+
+.mt-wordmark {
+  font-size: 26px;
+}
+
+.mt-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.mt-nav-mobile {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.mt-mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 20px 20px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.mt-mobile-menu-link {
+  padding: 14px 4px;
+  color: var(--text);
+  font-size: 17px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.mt-mobile-menu-link:last-of-type {
+  margin-bottom: 12px;
+}
+
+.mt-hero {
+  padding: 96px 32px 120px;
+}
+
+.mt-hero-grid {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.mt-hero-title {
+  font-size: 104px;
+  margin: 0 0 40px;
+}
+
+.mt-hero-lead {
+  margin: 0 0 44px;
+  font-size: 19px;
+}
+
+.mt-hero-graphic {
+  display: flex;
+  justify-content: center;
+}
+
+.mt-section {
+  padding: 110px 32px;
+}
+
+.mt-section-contact {
+  padding-bottom: 130px;
+}
+
+.mt-section-flush {
+  padding: 110px 0;
+}
+
+.mt-container-padded {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.mt-eyebrow-row {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.mt-section-title {
+  font-size: 46px;
+  margin: 0 0 64px;
+}
+
+#team .mt-section-title {
+  margin-bottom: 20px;
+}
+
+.mt-section-lead {
+  margin: 0 0 60px;
+}
+
+.mt-contact-title {
+  font-size: 52px;
+}
+
+.mt-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.mt-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.mt-rail {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 32px;
+  padding: 4px 32px 12px;
+  scroll-behavior: smooth;
+}
+
+.mt-rail-card {
+  flex: 0 0 420px;
+  scroll-snap-align: start;
+}
+
+.mt-rail-end {
+  flex: 0 0 32px;
+}
+
+.mt-card-body {
+  padding: 28px 28px 32px;
+}
+
+.mt-team-card-tile {
+  height: 300px;
+}
+
+.mt-footer {
+  padding: 36px 32px;
+}
+
+.mt-detail {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 56px 32px 130px;
+}
+
+.mt-detail-title {
+  font-size: 72px;
+}
+
+.mt-person-layout .mt-detail-title {
+  font-size: 64px;
+}
+
+.mt-detail-lead {
+  font-size: 20px;
+}
+
+.mt-detail-body {
+  font-size: 18px;
+}
+
+.mt-detail-hero-tile {
+  height: 460px;
+}
+
+.mt-results {
+  margin-bottom: 80px;
+}
+
+.mt-project-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+  gap: 72px;
+  align-items: start;
+}
+
+.mt-person-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.mt-detail-aside {
+  position: sticky;
+  top: 120px;
+}
+
+.mt-gallery-tile {
+  height: 240px;
+}
+
+.mt-portrait-tile {
+  height: 420px;
+}
+
+.mt-paper-row {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.mt-paper-title {
+  font-size: 19px;
+}
+
+@media (max-width: 1024px) {
+  .mt-hero-title {
+    font-size: 76px;
+  }
+
+  .mt-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mt-results {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .mt-nav {
+    display: none;
+  }
+
+  .mt-nav-mobile {
+    display: flex;
+  }
+
+  .mt-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .mt-hero-graphic {
+    order: -1;
+    justify-content: flex-start;
+  }
+
+  .mt-hero-graphic svg {
+    width: 160px;
+    height: 160px;
+  }
+
+  .mt-project-layout,
+  .mt-person-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+
+  .mt-detail-aside {
+    position: static;
+  }
+
+  .mt-person-layout .mt-detail-aside {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mt-header {
+    padding: 14px 20px;
+  }
+
+  .mt-wordmark {
+    font-size: 21px;
+  }
+
+  .mt-hero {
+    padding: 48px 20px 72px;
+  }
+
+  .mt-hero-title {
+    font-size: clamp(36px, 10.5vw, 56px);
+    margin-bottom: 28px;
+  }
+
+  .mt-hero-lead {
+    font-size: 17px;
+    margin-bottom: 32px;
+  }
+
+  .mt-hero-graphic svg {
+    width: 120px;
+    height: 120px;
+  }
+
+  .mt-section {
+    padding: 72px 20px;
+  }
+
+  .mt-section-contact {
+    padding-bottom: 88px;
+  }
+
+  .mt-section-flush {
+    padding: 72px 0;
+  }
+
+  .mt-container-padded {
+    padding: 0 20px;
+  }
+
+  .mt-eyebrow-row {
+    margin-bottom: 32px;
+  }
+
+  .mt-section-title {
+    font-size: 32px;
+  }
+
+  .mt-section-title {
+    margin-bottom: 36px;
+  }
+
+  #team .mt-section-title {
+    margin-bottom: 14px;
+  }
+
+  .mt-section-lead {
+    margin-bottom: 36px;
+  }
+
+  .mt-contact-title {
+    font-size: 34px;
+  }
+
+  .mt-grid-3,
+  .mt-grid-2,
+  .mt-results {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .mt-results {
+    margin-bottom: 56px;
+  }
+
+  .mt-rail {
+    gap: 16px;
+    scroll-padding-inline: 20px;
+    padding: 4px 20px 12px;
+  }
+
+  .mt-rail-card {
+    flex-basis: min(340px, 84vw);
+  }
+
+  .mt-rail-end {
+    flex-basis: 4px;
+  }
+
+  .mt-card-body {
+    padding: 22px 22px 26px;
+  }
+
+  .mt-team-card-tile {
+    height: 240px;
+  }
+
+  .mt-footer {
+    padding: 28px 20px;
+  }
+
+  .mt-detail {
+    padding: 32px 20px 88px;
+  }
+
+  .mt-detail-title,
+  .mt-person-layout .mt-detail-title {
+    font-size: clamp(32px, 9vw, 44px);
+  }
+
+  .mt-detail-lead {
+    font-size: 17px;
+  }
+
+  .mt-detail-body {
+    font-size: 16px;
+  }
+
+  .mt-detail-hero-tile {
+    height: 220px;
+  }
+
+  .mt-gallery-tile {
+    height: 200px;
+  }
+
+  .mt-portrait-tile {
+    height: 320px;
+  }
+
+  .mt-paper-row {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .mt-paper-title {
+    font-size: 17px;
+  }
+
+  .mt-back-btn {
+    margin-bottom: 32px;
+  }
+
+  .mt-btn-primary,
+  .mt-btn-secondary {
+    padding: 14px 22px;
+  }
+}

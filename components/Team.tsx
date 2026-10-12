@@ -3,9 +3,9 @@ import type { TeamMember } from '@/lib/types';
 
 export default function Team({ team }: { team: TeamMember[] }) {
   return (
-    <section id="team" style={{ padding: '110px 32px', borderTop: '1px solid var(--border-soft)' }}>
+    <section id="team" className="mt-section" style={{ borderTop: '1px solid var(--border-soft)' }}>
       <div style={{ maxWidth: 1360, margin: '0 auto' }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 24, marginBottom: 56 }}>
+        <div className="mt-eyebrow-row">
           <span
             style={{ color: 'var(--cyan)', fontSize: 13, letterSpacing: '0.2em', textTransform: 'uppercase' }}
           >
@@ -14,18 +14,18 @@ export default function Team({ team }: { team: TeamMember[] }) {
           <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
         </div>
         <h2
-          className="mt-heading"
-          style={{ fontWeight: 700, fontSize: 46, lineHeight: 1.05, margin: '0 0 20px', maxWidth: 820 }}
+          className="mt-heading mt-section-title"
+          style={{ fontWeight: 700, lineHeight: 1.05, maxWidth: 820 }}
         >
           The people behind the models.
         </h2>
-        <p style={{ margin: '0 0 60px', color: 'var(--muted)', fontSize: 17, fontWeight: 300 }}>
+        <p className="mt-section-lead" style={{ color: 'var(--muted)', fontSize: 17, fontWeight: 300 }}>
           Select a card to see publications and project history.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 24 }}>
+        <div className="mt-grid-3">
           {team.map((m) => (
             <Link key={m.slug} href={`/team/${m.slug}`} className="mt-team-card">
-              <div className="mt-tile-purple" style={{ height: 300, padding: 16 }}>
+              <div className="mt-tile-purple mt-team-card-tile" style={{ padding: 16 }}>
                 {m.photoUrl && (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img className="mt-tile-img" src={m.photoUrl} alt="" />
@@ -34,7 +34,7 @@ export default function Team({ team }: { team: TeamMember[] }) {
                   portrait — {m.name}
                 </span>
               </div>
-              <div style={{ padding: 28 }}>
+              <div className="mt-card-body">
                 <h3 className="mt-heading" style={{ fontWeight: 700, fontSize: 24, margin: '0 0 8px' }}>
                   {m.name}
                 </h3>

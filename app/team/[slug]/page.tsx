@@ -25,15 +25,15 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
   if (!person) notFound();
 
   return (
-    <main style={{ maxWidth: 1360, margin: '0 auto', padding: '56px 32px 130px' }}>
+    <main className="mt-detail">
       <Link href="/" className="mt-back-btn">
         ← Back to team
       </Link>
-      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,360px) minmax(0,1fr)', gap: 64, alignItems: 'start' }}>
-        <aside style={{ position: 'sticky', top: 120 }}>
+      <div className="mt-person-layout">
+        <aside className="mt-detail-aside">
           <div
-            className="mt-tile-purple"
-            style={{ height: 420, borderRadius: 14, border: '1px solid var(--border)', padding: 16, marginBottom: 28 }}
+            className="mt-tile-purple mt-portrait-tile"
+            style={{ borderRadius: 14, border: '1px solid var(--border)', padding: 16, marginBottom: 28 }}
           >
             {person.photoUrl && (
               // eslint-disable-next-line @next/next/no-img-element
@@ -57,10 +57,10 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
           <div style={{ color: 'var(--cyan)', fontSize: 13, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 20 }}>
             {person.role}
           </div>
-          <h1 className="mt-heading" style={{ fontWeight: 800, fontSize: 64, lineHeight: 1.0, margin: '0 0 28px' }}>
+          <h1 className="mt-heading mt-detail-title" style={{ fontWeight: 800, lineHeight: 1.0, margin: '0 0 28px' }}>
             {person.name}
           </h1>
-          <p style={{ margin: '0 0 40px', maxWidth: 720, color: 'var(--text-dim)', fontSize: 19, lineHeight: 1.65, fontWeight: 300 }}>
+          <p className="mt-detail-lead" style={{ margin: '0 0 40px', maxWidth: 720, color: 'var(--text-dim)', lineHeight: 1.65, fontWeight: 300 }}>
             {person.bio}
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 80 }}>
@@ -81,11 +81,12 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
             {person.papers.map((pub) => (
               <div
                 key={pub.title}
-                style={{ display: 'grid', gridTemplateColumns: '72px minmax(0,1fr)', gap: 24, padding: '24px 0', borderBottom: '1px solid var(--border)' }}
+                className="mt-paper-row"
+                style={{ padding: '24px 0', borderBottom: '1px solid var(--border)' }}
               >
                 <span style={{ fontFamily: 'ui-monospace, monospace', fontSize: 14, color: 'var(--muted-3)' }}>{pub.year}</span>
                 <div>
-                  <div style={{ fontSize: 19, lineHeight: 1.45, marginBottom: 8, color: 'var(--text)' }}>{pub.title}</div>
+                  <div className="mt-paper-title" style={{ lineHeight: 1.45, marginBottom: 8, color: 'var(--text)' }}>{pub.title}</div>
                   <div style={{ fontSize: 14, color: 'var(--muted-4)', fontWeight: 300 }}>{pub.venue}</div>
                 </div>
               </div>
@@ -98,7 +99,7 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
           >
             Projects
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0,1fr))', gap: 20 }}>
+          <div className="mt-grid-2">
             {person.projects.map((pr) => {
               const linked = allProjects.find((proj) => proj.title === pr.title);
               const content = (

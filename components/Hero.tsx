@@ -3,23 +3,14 @@ import MantosGraphic from './MantosGraphic';
 export default function Hero() {
   return (
     <section
+      className="mt-hero"
       style={{
         position: 'relative',
-        padding: '96px 32px 120px',
         backgroundImage: 'radial-gradient(var(--hero-dots) 1px, transparent 1px)',
         backgroundSize: '28px 28px',
       }}
     >
-      <div
-        style={{
-          maxWidth: 1360,
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'minmax(0,1.35fr) minmax(0,1fr)',
-          gap: 48,
-          alignItems: 'center',
-        }}
-      >
+      <div className="mt-hero-grid">
         <div>
           <div
             style={{
@@ -34,13 +25,11 @@ export default function Hero() {
             Mantos Technology Studio · Est. 2022
           </div>
           <h1
-            className="mt-heading"
+            className="mt-heading mt-hero-title"
             style={{
               fontWeight: 800,
-              fontSize: 104,
               lineHeight: 0.94,
               letterSpacing: '-0.02em',
-              margin: '0 0 40px',
               textWrap: 'balance',
             }}
           >
@@ -58,10 +47,9 @@ export default function Hero() {
             behind tomorrow.
           </h1>
           <p
+            className="mt-hero-lead"
             style={{
               maxWidth: 520,
-              margin: '0 0 44px',
-              fontSize: 19,
               lineHeight: 1.6,
               color: 'var(--muted)',
               fontWeight: 300,
@@ -79,7 +67,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className="mt-hero-graphic">
           <MantosGraphic size={300} />
         </div>
       </div>

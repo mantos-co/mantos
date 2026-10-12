@@ -2,9 +2,9 @@ import { topics } from '@/lib/data';
 
 export default function Topics() {
   return (
-    <section id="topics" style={{ padding: '110px 32px', borderTop: '1px solid var(--border-soft)' }}>
+    <section id="topics" className="mt-section" style={{ borderTop: '1px solid var(--border-soft)' }}>
       <div style={{ maxWidth: 1360, margin: '0 auto' }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 24, marginBottom: 56 }}>
+        <div className="mt-eyebrow-row">
           <span
             style={{
               color: 'var(--cyan)',
@@ -18,12 +18,12 @@ export default function Topics() {
           <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
         </div>
         <h2
-          className="mt-heading"
-          style={{ fontWeight: 700, fontSize: 46, lineHeight: 1.05, margin: '0 0 64px', maxWidth: 820 }}
+          className="mt-heading mt-section-title"
+          style={{ fontWeight: 700, lineHeight: 1.05, maxWidth: 820 }}
         >
           Three disciplines, one pipeline.
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0,1fr))', gap: 24 }}>
+        <div className="mt-grid-3">
           {topics.map((t) => (
             <article key={t.num} className="mt-topic-card">
               <div

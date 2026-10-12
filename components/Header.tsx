@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import MantosLogo from './MantosLogo';
-import ThemeToggle from './ThemeToggle';
+import HeaderNav from './HeaderNav';
 
 export default function Header() {
   return (
     <header
+      className="mt-header"
       style={{
         position: 'sticky',
         top: 0,
@@ -12,7 +13,6 @@ export default function Header() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '20px 32px',
         background: 'var(--header-bg)',
         backdropFilter: 'blur(10px)',
         borderBottom: '1px solid var(--border-soft)',
@@ -24,10 +24,9 @@ export default function Header() {
       >
         <MantosLogo />
         <span
-          className="mt-heading"
+          className="mt-heading mt-wordmark"
           style={{
             fontWeight: 800,
-            fontSize: 26,
             letterSpacing: '0.02em',
             background: 'var(--gradient-brand)',
             WebkitBackgroundClip: 'text',
@@ -38,21 +37,7 @@ export default function Header() {
           MANTOS
         </span>
       </Link>
-      <nav style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
-        <Link href="/#topics" className="mt-nav-link">
-          Research
-        </Link>
-        <Link href="/#projects" className="mt-nav-link">
-          Projects
-        </Link>
-        <Link href="/#team" className="mt-nav-link">
-          Team
-        </Link>
-        <Link href="/#contact" className="mt-nav-cta">
-          Get in Touch
-        </Link>
-        <ThemeToggle />
-      </nav>
+      <HeaderNav />
     </header>
   );
 }
