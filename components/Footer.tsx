@@ -13,7 +13,7 @@ export default function Footer() {
         fontWeight: 300,
       }}
     >
-      <span>© {new Date().getFullYear()} Mantos S.A.S</span>
+      <span>© {new Date().getFullYear()} Mantosfera S.A.S</span>
       <span>Geophysics · Inverse problems · AI</span>
     </footer>
   );
