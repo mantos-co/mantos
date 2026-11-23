@@ -22,7 +22,7 @@ export default function Hero() {
               marginBottom: 34,
             }}
           >
-            Mantosfera Technology Studio · Est. 2022
+            Mantosfera . 2026
           </div>
           <h1
             className="mt-heading mt-hero-title"
