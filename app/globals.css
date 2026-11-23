@@ -600,6 +600,78 @@ a:hover {
   font-size: 19px;
 }
 
+.mt-contact-grid {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.mt-form-card {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card-bg);
+}
+
+.mt-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.mt-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.mt-field-wide {
+  grid-column: 1 / -1;
+}
+
+.mt-field input,
+.mt-field select,
+.mt-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--card-bg-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 16px;
+}
+
+.mt-field textarea {
+  resize: vertical;
+}
+
+.mt-field input:focus,
+.mt-field select:focus,
+.mt-field textarea:focus {
+  outline: 2px solid var(--cyan);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.mt-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.mt-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
 @media (max-width: 1024px) {
   .mt-hero-title {
     font-size: 76px;
@@ -646,6 +718,11 @@ a:hover {
 
   .mt-detail-aside {
     position: static;
+  }
+
+  .mt-contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
   }
 
   .mt-person-layout .mt-detail-aside {
@@ -719,6 +796,14 @@ a:hover {
 
   .mt-contact-title {
     font-size: 34px;
+  }
+
+  .mt-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mt-form-card {
+    padding: 22px;
   }
 
   .mt-grid-3,

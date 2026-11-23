@@ -14,7 +14,7 @@ export async function generateMetadata({
   const person = await getTeamMemberBySlug(slug);
   if (!person) return {};
   return {
-    title: `${person.name} — Mantos`,
+    title: `${person.name} — Mantosfera`,
     description: person.bio,
   };
 }

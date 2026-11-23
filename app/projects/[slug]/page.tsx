@@ -14,7 +14,7 @@ export async function generateMetadata({
   const project = await getProjectBySlug(slug);
   if (!project) return {};
   return {
-    title: `${project.title} — Mantos`,
+    title: `${project.title} — Mantosfera`,
     description: project.summary,
   };
 }

@@ -23,4 +23,6 @@ Runs on `http://localhost:3000`. Requires the backend API to be running and reac
 
 Deploy as a standard Next.js app (e.g. Vercel). Set `INTERNAL_API_URL` in the deployment's environment variables to the deployed backend's URL — it's read server-side only, so it never reaches the browser bundle.
 
+The contact form emails `contacto@mantos.co` through [Resend](https://resend.com): set `RESEND_API_KEY` and `CONTACT_FROM_EMAIL` (an address on a domain verified in Resend, e.g. `Mantosfera <web@mantos.co>`). `NEXT_PUBLIC_WHATSAPP_NUMBER` (country code + number) shows the WhatsApp button; it's hidden when unset.
+
 Content (projects, team) is managed via the companion [admin panel](https://github.com/TJaqui/mantos-admin), not by editing this repo.

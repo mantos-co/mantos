@@ -19,7 +19,7 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Mantos Technology Studio",
+  title: "Mantosfera Technology Studio",
   description:
     "Geophysics, inverse problems and AI solutions for teams that need to see what lies beneath. From data to decision — rigorously.",
 };

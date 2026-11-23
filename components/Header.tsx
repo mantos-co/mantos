@@ -28,13 +28,10 @@ export default function Header() {
           style={{
             fontWeight: 800,
             letterSpacing: '0.02em',
-            background: 'var(--gradient-brand)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            color: 'transparent',
           }}
         >
-          MANTOS
+          <span style={{ color: 'var(--blue)' }}>MANTOS</span>
+          <span style={{ color: 'var(--text)' }}>FERA</span>
         </span>
       </Link>
       <HeaderNav />
